@@ -28,4 +28,10 @@ export class GameService {
     Cell.count = 1;
     this.game = new Game();
   }
+
+  showSolution() {
+    this.game.rows.forEach((row) =>
+      row.forEach((cell) => (cell.isShown = true))
+    );
+  }
 }
