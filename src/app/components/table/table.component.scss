@@ -1,0 +1,58 @@
+@import "variables";
+
+table {
+  border: 1px solid $black-color;
+  font-size: 28px;
+  font-weight: 700;
+  color: $black-color;
+  user-select: none;
+
+  tr {
+    &:nth-child(3n) td {
+      border-bottom: 1px solid $black-color;
+    }
+
+    &:nth-child(3n + 1) td {
+      border-top: 1px solid $black-color;
+    }
+
+    td {
+      border: 1px solid #cdcdcd;
+      background-color: $white-color;
+      padding: 10px 15px;
+      text-align: center;
+
+      &:nth-child(3n) {
+        border-right: 1px solid $black-color;
+      }
+
+      &:nth-child(3n + 1) {
+        border-left: 1px solid $black-color;
+      }
+
+      &.unknown {
+        margin: 0px;
+        padding: 0px;
+
+        input {
+          border: none;
+          outline: none;
+
+          width: 40px;
+          height: 40px;
+          text-align: center;
+          font-size: 28px;
+          font-weight: 700;
+
+          &:disabled {
+            color: $black-color;
+          }
+        }
+      }
+
+      &.known {
+        background-color: #eeeeee;
+      }
+    }
+  }
+}

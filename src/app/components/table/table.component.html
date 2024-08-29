@@ -1,0 +1,15 @@
+<table [cellSpacing]="0">
+  @for (row of tmp; track row) {
+  <tr>
+    @for (cell of row; track cell) {
+    <td *ngIf="true; else unkn" class="known">{{ cell }}</td>
+
+    <ng-template #unkn>
+      <td class="unknown">
+        <input type="text" />
+      </td>
+    </ng-template>
+    }
+  </tr>
+  }
+</table>
