@@ -1,7 +1,8 @@
 <div class="wrapper">
-  <app-header [errorsCount]="game.errorsCount" />
+  <app-header [errorsCount]="gameService.game.errorsCount" />
   <main>
-    <app-table [cells]="game.cells" />
+    <p *ngIf="gameService.isGameOver">Игра закончена!</p>
+    <app-table [cells]="gameService.game.cells" />
     <router-outlet />
   </main>
 </div>

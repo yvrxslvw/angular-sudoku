@@ -4,6 +4,10 @@ import { BASE_FIELD } from '../constants/baseField';
 export class Game {
   public errorsCount: number = 0;
 
+  public correctCount: number = 0;
+
+  public totalCorrect: number = 0;
+
   public cells: Cell[] = [];
 
   constructor() {
@@ -13,5 +17,7 @@ export class Game {
 
     for (let i = 0; i < 81; i++)
       this.cells.push(new Cell(arr[+BASE_FIELD[i] - 1]));
+
+    this.cells.forEach((cell) => !cell.isShown && this.totalCorrect++);
   }
 }

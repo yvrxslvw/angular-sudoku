@@ -8,5 +8,5 @@
   [ngClass]="{
     error: (error$ | async)
   }"
-  [disabled]="!!(correct$ | async)"
+  [disabled]="!!(correct$ | async) || gameService.isGameOver"
 />

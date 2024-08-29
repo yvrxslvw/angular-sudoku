@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 import { Cell } from '../../models/cell';
+import { GameService } from '../../services/game.service';
 
 @Component({
   selector: 'app-cell-input',
@@ -21,11 +22,16 @@ export class CellInputComponent {
 
   public correct$: Subject<boolean> = new Subject();
 
+  constructor(public readonly gameService: GameService) {}
+
   public checkValue() {
-    if (+this.value !== this.cell.value) this.error$.next(true);
-    else {
+    if (+this.value !== this.cell.value) {
+      this.error$.next(true);
+      this.gameService.incrementError();
+    } else {
       this.correct$.next(true);
       this.error$.next(false);
+      this.gameService.incrementCorrect();
     }
   }
 }
