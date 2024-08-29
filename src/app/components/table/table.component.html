@@ -1,5 +1,5 @@
 <table [cellSpacing]="0">
-  @for (row of gameService.game.rows; track row) {
+  @for (row of gameService.game.rows; track rndm()) {
   <tr>
     @for (cell of row; track cell.id) {
     <td *ngIf="cell.isShown; else unkn" class="known">{{ cell.value }}</td>

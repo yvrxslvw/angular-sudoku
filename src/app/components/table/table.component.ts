@@ -1,8 +1,7 @@
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component } from '@angular/core';
+import { Component } from '@angular/core';
 
-import { Cell } from '../../models/cell';
 import { CellInputComponent } from '../cell-input/cell-input.component';
 import { GameService } from '../../services/game.service';
 
@@ -15,4 +14,8 @@ import { GameService } from '../../services/game.service';
 })
 export class TableComponent {
   constructor(public readonly gameService: GameService) {}
+
+  rndm() {
+    return Math.floor(Math.random() * (9999 - 1) + 1);
+  }
 }
