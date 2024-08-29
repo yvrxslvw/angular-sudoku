@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 
 import { Game } from '../models/game';
+import { Cell } from '../models/cell';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GameService {
-  public readonly game: Game = new Game();
+  public game: Game = new Game();
 
   public isGameOver: boolean = false;
 
@@ -20,5 +21,11 @@ export class GameService {
 
     if (this.game.correctCount === this.game.totalCorrect)
       this.isGameOver = true;
+  }
+
+  restartGame() {
+    this.isGameOver = false;
+    Cell.count = 1;
+    this.game = new Game();
   }
 }

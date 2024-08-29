@@ -1,5 +1,5 @@
 export class Cell {
-  private static count = 1;
+  public static count = 1;
 
   public readonly id: number;
 
