@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@import "variables";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  line-height: 100%;
+}
+
+body {
+  font-family: "Poppins", system-ui;
+  font-weight: 500;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 100%;
+  color: $black-color;
+}
