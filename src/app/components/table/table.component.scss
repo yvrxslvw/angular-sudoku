@@ -33,21 +33,6 @@ table {
       &.unknown {
         margin: 0px;
         padding: 0px;
-
-        input {
-          border: none;
-          outline: none;
-
-          width: 40px;
-          height: 40px;
-          text-align: center;
-          font-size: 28px;
-          font-weight: 700;
-
-          &:disabled {
-            color: $black-color;
-          }
-        }
       }
 
       &.known {

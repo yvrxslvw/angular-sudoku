@@ -1,12 +1,12 @@
 <table [cellSpacing]="0">
-  @for (row of tmp; track row) {
+  @for (row of rows; track row) {
   <tr>
-    @for (cell of row; track cell) {
-    <td *ngIf="true; else unkn" class="known">{{ cell }}</td>
+    @for (cell of row; track cell.id) {
+    <td *ngIf="cell.isShown; else unkn" class="known">{{ cell.value }}</td>
 
     <ng-template #unkn>
       <td class="unknown">
-        <input type="text" />
+        <app-cell-input [cell]="cell" />
       </td>
     </ng-template>
     }

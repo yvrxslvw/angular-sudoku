@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 
 import { HeaderComponent } from './components/header/header.component';
 import { TableComponent } from './components/table/table.component';
+import { Game } from './models/game';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,6 @@ import { TableComponent } from './components/table/table.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {}
+export class AppComponent {
+  public readonly game: Game = new Game();
+}

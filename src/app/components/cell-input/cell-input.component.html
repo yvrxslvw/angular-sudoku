@@ -1,0 +1,12 @@
+<input
+  type="text"
+  size="1"
+  maxlength="1"
+  onkeydown="return ((event.keyCode>47)&&(event.keyCode<58))"
+  [(ngModel)]="value"
+  (change)="checkValue()"
+  [ngClass]="{
+    error: (error$ | async)
+  }"
+  [disabled]="!!(correct$ | async)"
+/>

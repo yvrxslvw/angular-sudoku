@@ -1,7 +1,7 @@
 <div class="wrapper">
-  <app-header />
+  <app-header [errorsCount]="game.errorsCount" />
   <main>
-    <app-table />
+    <app-table [cells]="game.cells" />
     <router-outlet />
   </main>
 </div>
